@@ -1,152 +1,85 @@
-﻿# Cloud-Native-NYCU-Final_Project
-
-## Project Overview
-
-Cloud-Native-NYCU-FinalProject is a Django-based backend service for a restaurant ordering system. It demonstrates a cloud-native architecture with containerization, a RESTful API, and PostgreSQL for persistent storage.
-
-## Features
-
-* **User Management**: Registration, login, and profile editing (via `users/` app).
-* **Menu Management**: CRUD operations for dishes, including support for images and descriptions (`menu/` app).
-* **Order Processing**: Create and track customer orders (`orders/` app).
-* **Dish Reviews**: Customers can leave reviews and ratings for dishes (`reviews/` app).
-* **Admin Interface**: Manage all models through Django Admin.
-
-## Repository Structure
-
-```
-Cloud-Native-NYCU-FinalProject/
-├── CloudNative_final/    # Django project settings, wsgi, URLs
-├── menu/                 # Menu app (models, views, templates)
-├── orders/               # Orders app
-├── reviews/              # Reviews app
-├── users/                # User profile & auth extensions
-├── static/               # Global static assets
-├── templates/            # Base templates
-├── Dockerfile
-├── docker-compose.yml
-├── manage.py
-├── requirements.txt
-├── .env.example          # Example environment variables
-└── README.md
-```
-
-## Prerequisites
-
-* Python 3.10+ or 3.12
-* pip
-* Docker & Docker Compose (optional, for containerized setup)
-
-## Getting Started
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/AlHIO/Cloud-Native-NYCU-FinalProject.git
-cd Cloud-Native-NYCU-FinalProject
-```
-
-### 2. Environment variables
-
-Copy `.env.example` to `.env` and fill in values:
-
-```
-DB_NAME=project_db
-DB_USER=AlHIO
-DB_PASSWORD=postgre
-DB_HOST=localhost      # or 'db' when using Docker
-DB_PORT=5432
-SECRET_KEY=your_secret_key
-DEBUG=True
-```
-
-### 3. Local development (without Docker)
-
-#### a. Create a virtual environment
-
-```bash
-python -m venv .venv
-# PowerShell:
-.\.venv\Scripts\Activate.ps1
-# cmd.exe:
-.venv\Scripts\activate.bat
-# Bash:
-source .venv/Scripts/activate
-```
-
-#### b. Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-#### c. Run database migrations
-
-```bash
-python manage.py migrate
-```
-
-#### d. Create a superuser
-
-```bash
-python manage.py createsuperuser
-```
-
-#### e. Start the development server
-
-```bash
-python manage.py runserver
-```
-
-Open `http://127.0.0.1:8000/` in your browser; admin at `http://127.0.0.1:8000/admin/`.
-
-### 4. Containerized setup (Docker)
-
-Ensure Docker & Docker Compose are installed.
-
-```bash
-# Build and start services
-docker-compose up --build -d
-
-# Apply migrations
-docker-compose exec web python manage.py migrate
-
-# Create superuser
-docker-compose exec web python manage.py createsuperuser
-```
-
-Access the app at `http://localhost:8000/`.
-
-## API Endpoints
-
-| Path              | Methods          | Description                   |
-| ----------------- | ---------------- | ----------------------------- |
-| `/api/auth/`      | POST, GET        | Login, logout, register       |
-| `/api/menu/`      | GET, POST        | List & create dishes          |
-| `/api/menu/<id>/` | GET, PUT, DELETE | Retrieve, update, delete dish |
-| `/api/orders/`    | GET, POST        | List & create orders          |
-| `/api/reviews/`   | GET, POST        | List & create reviews         |
-
-*(Enable DRF browsable API or Swagger if configured.)*
-
-## Running Tests
-
-```bash
-python manage.py test
-```
-
-## Contributing
-
-1. Fork this repository
-2. Create a branch: `git checkout -b feature/YourFeature`
-3. Commit changes: `git commit -m "Add feature"`
-4. Push: `git push origin feature/YourFeature`
-5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
+感謝您提供專案連結。我已檢視您的 GitHub 倉庫 [AlHIO/CloudNative\_2025Final](https://github.com/AlHIO/CloudNative_2025Final)，並注意到目前的 `README.md` 檔案可能與專案內容不完全一致。根據倉庫中的目錄結構與檔案，我為您重寫了一份更符合專案實際內容的 README。
 
 ---
 
-*Happy coding!*
+# CloudNative\_2025Final
+
+本專案為 2025 年雲原生課程的期末專案，旨在建構一個基於 Django 的餐廳點餐系統，並採用雲原生架構設計，結合容器化部署、RESTful API 與 PostgreSQL 資料庫，以實現高擴展性與可維護性。
+
+## 專案功能
+
+* **使用者管理**：提供註冊、登入、個人資料編輯等功能。
+* **菜單管理**：支援新增、修改、刪除菜品資訊，並可上傳圖片與描述。
+* **訂單處理**：使用者可建立與追蹤訂單狀態。
+* **評論系統**：使用者可對菜品進行評分與留言。
+* **管理介面**：透過 Django Admin 管理所有模型資料。
+
+## 專案結構
+
+```
+CloudNative_2025Final/
+├── CloudNative_final/       # 主應用程式目錄
+│   ├── __init__.py
+│   ├── settings.py          # 設定檔
+│   ├── urls.py              # URL 路由設定
+│   └── wsgi.py              # WSGI 入口點
+├── common/                  # 共用模組
+├── menu/                    # 菜單管理應用
+├── orders/                  # 訂單處理應用
+├── reviews/                 # 評論系統應用
+├── users/                   # 使用者管理應用
+├── static/                  # 靜態檔案
+├── templates/               # HTML 模板
+├── manage.py                # Django 管理指令
+├── requirements.txt         # 相依套件清單
+└── README.md                # 專案說明文件
+```
+
+
+
+## 安裝與執行
+
+1. **建立虛擬環境**：
+
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+
+
+
+2. **安裝相依套件**：
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+
+
+3. **資料庫遷移**：
+
+   ```bash
+   python manage.py migrate
+   ```
+
+
+
+4. **啟動開發伺服器**：
+
+   ```bash
+   python manage.py runserver
+   ```
+
+
+
+5. **存取應用程式**：在瀏覽器中開啟 `http://localhost:8000/`。
+
+## 技術棧
+
+* **後端框架**：Django
+* **資料庫**：PostgreSQL
+* **容器化**：Docker（可選）
+* **API 設計**：RESTful
+
+<-----未做----->
+* **部署平台**：支援雲端平台（如 AWS、GCP、Azure）
