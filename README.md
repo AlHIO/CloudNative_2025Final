@@ -1,7 +1,3 @@
-感謝您提供專案連結。我已檢視您的 GitHub 倉庫 [AlHIO/CloudNative\_2025Final](https://github.com/AlHIO/CloudNative_2025Final)，並注意到目前的 `README.md` 檔案可能與專案內容不完全一致。根據倉庫中的目錄結構與檔案，我為您重寫了一份更符合專案實際內容的 README。
-
----
-
 # CloudNative\_2025Final
 
 本專案為 2025 年雲原生課程的期末專案，旨在建構一個基於 Django 的餐廳點餐系統，並採用雲原生架構設計，結合容器化部署、RESTful API 與 PostgreSQL 資料庫，以實現高擴展性與可維護性。
